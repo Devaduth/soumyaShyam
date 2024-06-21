@@ -43,11 +43,13 @@
         <div class="header_top_bg header_trans-fixed menu_light_text">
 
             <div class="container-fluid ">
+                <div class="hamburger" style="display: flex; justify-content: center; align-items: center; margin-top: 2rem;">
+                    <a href="index.html" style="font-size: small; text-decoration: none;" class="logo"><span id="span-logo" style="font-size: medium; text-decoration: none; color: white;">Soumya Shyam</span></a>
+                </div>
                 <div class="row">
                     <div class="col-xs-12">
                         <header class="right-menu classic">
                             <!-- LOGO -->
-                            <a href="index.html" class="logo"><img id="logo" src="images/logo_w.png" alt=""></a>
                             <!-- /LOGO -->
                             <!-- MOB MENU ICON -->
                             <a href="javascript:void(0)" class="mob-nav">
@@ -83,18 +85,14 @@
                                     <li class="menu-item menu-item-has-children mega-menu">
                                         <a href="#">Studio</a>
                                     </li>
-                                    <li
+                                    <!-- <li
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
                                         <a href="javascript:void(0)">Services</a>
 
-                                    </li>
+                                    </li> -->
                                     <li
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                        <a href="javascript:void(0)">Pricing</a>
-                                    </li>
-                                    <li
-                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
-                                        <a href="javascript:void(0)">Contact</a>
+                                        <a href="main/contact.html">Contact</a>
                                     </li>
                                 </ul>
 
@@ -453,9 +451,9 @@
     <script>
         document.addEventListener('scroll', () => {
             if (window.scrollY > 0) {
-                document.getElementById('logo').src = 'images/logo.png'
+                document.getElementById('span-logo').style.color = 'black'
             } else {
-                document.getElementById('logo').src = 'images/logo_w.png'
+                document.getElementById('span-logo').style.color = 'white'
             }
         })
     </script>
