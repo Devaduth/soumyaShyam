@@ -6,7 +6,7 @@
             $('.spinner-preloader-wrap').fadeOut(500);
         }
         if ($('.preloader-text').length) {
-            $('.preloader-text').fadeOut(500);
+            $('.preloader-text').fadeOut(4000);
         }
         if ($('.image-preloader-wrap').length) {
             $('.image-preloader-wrap').fadeOut(500);

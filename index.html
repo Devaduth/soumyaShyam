@@ -23,26 +23,41 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/lightgallery.min.css" />
     <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
 </head>
 
 <body>
-
-
-
+    <style>
+        #pre-loader {
+            position: fixed;
+            z-index: 9999;
+            background: black url(images/loader.gif) no-repeat center center;
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+            background-size: 100% 100vh;
+        }
+    </style>
     <!-- MAIN_WRAPPER -->
-    <div class="preloader-text">
-        <div class="text-wrap">S</div>
-        <span>loading...</span>
+    <div id="pre-loader">
+
     </div>
+    <!-- <div class="preloader-text">
+        <div class="text-wrap"></div>
+        <span>loading...</span>
+    </div> -->
 
     <div class="main-wrapper" data-sound="/audio" data-top="992">
         <div class="header_top_bg  header_trans-fixed menu_light_text">
             <div class="container-fluid">
+
                 <div class="row">
                     <div class="col-xs-12">
-                        <header class="right-menu classic">
+                        <header class="right-menu classic ">
                             <!-- LOGO -->
 
                             <!-- /LOGO -->
@@ -63,7 +78,8 @@
                                         <span class="line"></span>
                                     </div>
                                 </a>
-                                <ul id="menu-menu-1" class="menu">
+                                <ul id="menu-menu-1"
+                                    class="menu animate__animated animate__fadeInDown animate__delay-1s">
                                     <li class="menu-item menu-item-has-children current-menu-ancestor mega-menu">
                                         <a href="#">Home</a>
                                     </li>
@@ -155,15 +171,17 @@
                     <div
                         class="container-fluid top-banner top-banner__scene full-height-window simple s-back-switch h_100vh">
                         <img src="images/hero.jpg" class="s-img-switch" alt="">
-                        
-                        <div class="content" style="display: flex; justify-content: center;">
+
+                        <div class="content fadeInUp-animation hero-text"
+                            style="display: flex; justify-content: center;">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <!-- <div class="sub-title">street photoshoot</div> -->
-                                    <h3 class="title"
+                                    <h3 class="title animate__animated animate__fadeInUp animate__delay-1s"
                                         style=" font-family: 'Cedarville Cursive', cursive; font-weight: 400; font-style: normal; ">
                                         Soumya Shyam</h3>
-                                    <div class="descr" style="display: flex; justify-content: center;">
+                                    <div class="descr animate__animated animate__fadeInUp animate__delay-1s"
+                                        style="display: flex; justify-content: center;">
                                         Makeup Artist.
                                     </div>
                                 </div>
@@ -179,7 +197,7 @@
         <div class="footer-bottom-wrap no-widgets">
             <div class="container">
                 <div class="row flex-wrap">
-                    <div class="copyright col-xs-12 text-center ">
+                    <div class="copyright col-xs-12 text-center animate__animated animate__fadeInUp animate__delay-1s">
                         Soumya Shyam ©2024. Designed by <a href="https://www.revlient.com/">Revlient.</a></div>
                 </div>
             </div>
@@ -194,36 +212,38 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/imagesloaded.min.js"></script>
-    <script>(function () {
-            function c() {
-                var b = a.contentDocument || a.contentWindow.document;
-                if (b) {
-                    var d = b.createElement('script');
-                    d.innerHTML = "window.__CF$cv$params={r:'894c5e80eaca118e',t:'MTcxODU1NzM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/6aac8896f227/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-                    b.getElementsByTagName('head')[0].appendChild(d)
-                }
-            }
-            if (document.body) {
-                var a = document.createElement('iframe');
-                a.height = 1;
-                a.width = 1;
-                a.style.position = 'absolute';
-                a.style.top = 0;
-                a.style.left = 0;
-                a.style.border = 'none';
-                a.style.visibility = 'hidden';
-                document.body.appendChild(a);
-                if ('loading' !== document.readyState) c();
-                else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
-                else {
-                    var e = document.onreadystatechange || function () { };
-                    document.onreadystatechange = function (b) {
-                        e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())
-                    }
-                }
-            }
-        })();
+
+
+    <script>
+        // var overlayloader = document.getElementById("pre-loader");
+        // setTimeout(() => {
+        //     setInterval(function () {
+
+        //         var opacity = overlayloader.style.opacity;
+        //         if (opacity > 0) {
+        //             opacity -= 0.1;
+        //             overlayloader.style.opacity = opacity;
+        //         }
+        //     }, 50);
+
+        // }, 7000);
+
+        $(document).ready(function () {
+            window.setTimeout("fadeMyDiv();", 5500); //call fade in 3 seconds
+        }
+        )
+
+        function fadeMyDiv() {
+            $("#pre-loader").fadeOut('slow');
+        }
+
+
     </script>
+
+    <script>
+        AOS.init();
+    </script>   
 </body>
+
 
 </html>
