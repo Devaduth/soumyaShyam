@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-left {
+    text-align: center;
+}
+
+.header-left h1 {
+    color: #6a1b9a;
+    font-size: 36px;
+    margin: 0;
+}
+
+.header-left p {
+    color: #888;
+    margin: 10px 0;
+}
+
+.header-right {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.stat {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.stat h2 {
+    color: #6a1b9a;
+    font-size: 24px;
+    margin: 0;
+}
+
+.intro {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.intro h2 {
+    color: #6a1b9a;
+    font-size: 28px;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 20px;
+}
+
+.service {
+    background-color: #fff;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    /* Smooth transition for size changes */
+}
+
+.service img {
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+    /* Smooth transition for size changes */
+}
+
+.service-info {
+    border-radius: 1rem;
+    background-color: #454545;
+    padding: 20px;
+    transition: all 0.3s ease;
+    /* Smooth transition for size changes */
+}
+
+.service-info h3 {
+    color: #FF6000;
+    font-size: 20px;
+}
+
+.service-info p {
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    margin: 10px 0;
+}
+
+
+
+.service-info  a {
+    margin-top: 2rem;
+    background-color: #FF6000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.service-info a:hover {
+    background-color: white;
+    color: #FF6000;
+}
+
+
+
+.franchise,
+.academy {
+    margin: 40px 20px;
+}
+
+.franchise-content,
+.academy-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.franchise-content img,
+.academy-content img {
+    width: 90%;
+    max-width: 800px;
+    /* Increase max-width */
+    border-radius: 8px;
+}
+
+.franchise-info,
+.academy-info {
+    max-width: 800px;
+    /* Increase max-width */
+    text-align: center;
+}
+
+.franchise-info h2,
+.academy-info h2 {
+    color: #6a1b9a;
+    font-size: 28px;
+}
+
+.franchise-info p,
+.academy-info p {
+    color: #555;
+    margin: 10px 0;
+}
+
+.franchise-info button,
+.academy-info button {
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.franchise-info button:hover,
+.academy-info button:hover {
+    background-color: #5e1690;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+    .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        flex-direction: row;
+        text-align: left;
+        width: 100%;
+    }
+
+    .service img {
+        width: 50%;
+        height: auto;
+    }
+
+    .service-info {
+        width: 50%;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-right {
+        margin-top: 20px;
+    }
+
+    .services {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 100%;
+        max-width: none;
+    }
+
+    .service {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service img {
+        width: 100%;
+    }
+
+    .service-info {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .franchise-content,
+    .academy-content {
+        flex-direction: column;
+    }
+
+    .franchise-content img,
+    .academy-content img {
+        width: 100%;
+    }
+}
+
+/* ------------------------------------
+CSS Variables
+------------------------------------ */
+
+:root {
+    /* Colors */
+    --primary: #17202a;
+    --secondary: #ffffff;
+    --acent: #bd2a28;
+    --white: #ffffff;
+    --text-color: #b8c4cc;
+    /* Text Color */
+    --border-color: #888888;
+    /* Border Color */
+
+    --drop-shadow: rgba(0, 0, 0, 0.2);
+    --inner-shadow: rgba(0, 0, 0, 0.2);
+    --inner-shadow-2: rgba(255, 255, 255, 0.2);
+
+    /* Font-family */
+    --font-primary: "Montserrat", sans-serif;
+    --font-secondary: "Montserrat", sans-serif;
+
+    /* Font-size */
+    --text-small: 13px;
+    --base-text: 16px;
+    --text-large: 18px;
+
+    --heading1: 42px;
+    --heading2: 33px;
+    --heading3: 28px;
+    --heading4: 23px;
+    --heading5: 19px;
+
+    /* Line height */
+    --text-small-line-height: 1rem;
+    --base-line-height: 1.3rem;
+    --text-large-line-height: 1.4rem;
+
+    --heading1-line-height: 3.1rem;
+    --heading2-line-height: 2.5rem;
+    --heading3-line-height: 2.1rem;
+    --heading4-line-height: 1.7rem;
+    --heading5-line-height: 1.4rem;
+
+    /* Font weight */
+    --fontWeight-regular: 400;
+    --fontWeight-medium: 500;
+    --fontWeight-semibold: 600;
+    --fontWeight-bold: 900;
+
+    /* Spacing */
+
+    /* Padding */
+    --large-btn-padding: 12px 24px;
+    --small-btn-padding: 6px 16px;
+    --extra-small-btn-padding: 6px 14px;
+
+    /* Border & Line */
+    --box-border: 1px solid var(--border-color);
+    --line: 1px solid var(--border-color);
+
+    /* Shadow */
+    --drow-shadow: 0px 5px 20px 0px var(--drop-shadow);
+    --inner-shadow: 0px 0px 10px 0px var(--inner-shadow) inset;
+    --inner-shadow-2: 0px 0px 20px 0px var(--inner-shadow-2) inset;
+
+    /* Rounder, Radious, Circle */
+    --btn-radius: 12px;
+    --box-radius: 12px;
+
+    /* Transition */
+    --transition: all 0.3s ease-in-out;
+    --lazy-transition: all 0.6s ease-in-out;
+}
+
+/* ------------------------------------
+Common Css / Class
+------------------------------------ */
+footer p {
+    font-size: var(--base-text);
+    font-weight: var(--fontWeight-regular);
+    line-height: var(--base-line-height);
+    color: var(--text-color);
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+footer h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    color: var(--secondary);
+    font-weight: var(--fontWeight-bold);
+}
+
+.transition-lazy {
+    transition: var(--lazy-transition);
+}
+
+.fill-btn {
+    font-size: var(--base-text);
+    font-weight: var(--fontWeight-regular);
+    color: var(--white);
+    outline: none;
+    cursor: pointer;
+    border: 1px solid var(--acent);
+    background-color: var(--acent);
+    transition: var(--transition);
+}
+
+.fill-btn:hover {
+    background-color: #cc3333;
+    color: var(--white);
+    box-shadow: inset 0 0px 10px 5px #750c0c;
+}
+
+.outline-btn {
+    font-family: var(--font-primary);
+    font-weight: var(--fontWeight-regular);
+    color: var(--white);
+    border: 1px solid var(--acent);
+    padding: var(--btn-padding);
+    transition: var(--transition);
+}
+
+.outline-btn:hover {
+    background-color: var(--acent);
+    color: var(--white);
+    border: 1px solid var(--acent);
+}
+
+.btn-large {
+    font-size: var(--base-text);
+    padding: var(--large-btn-padding);
+    border-radius: var(--btn-radius);
+}
+
+.btn-small {
+    font-size: var(--text-small);
+    padding: var(--small-btn-padding);
+    border-radius: 8px;
+}
+
+/* Icons */
+.outline-icon {
+    font-size: var(--text-small);
+    font-weight: var(--fontWeight-regular);
+    color: var(--text-color);
+    cursor: pointer;
+    outline: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outline-icon:hover,
+.outline-icon.active {
+    background-color: var(--acent);
+    color: var(--white);
+}
+
+.fill-icon {
+    font-size: var(--text-small);
+    font-weight: var(--fontWeight-regular);
+    color: var(--acent);
+    cursor: pointer;
+}
