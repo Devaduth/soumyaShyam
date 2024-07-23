@@ -27,8 +27,10 @@
     <link rel="stylesheet" href="css/home-blog.css">
     <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/blog.min.css" />
     <link rel="stylesheet" href="css/lightgallery.min.css" />
     <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/events.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -89,6 +91,111 @@
 <body>
 
     <style>
+        
+         #myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #myImg:hover {
+            opacity: 0.7;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display:block;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 99999;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content,
+        #caption {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {
+                -webkit-transform: scale(0)
+            }
+
+            to {
+                -webkit-transform: scale(1)
+            }
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0)
+            }
+
+            to {
+                transform: scale(1)
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px) {
+            .modal-content {
+                width: 100%;
+            }
+        }
+
         @media only screen and (max-width: 800px) {
             #makeup-artist {
                 display: none;
@@ -100,8 +207,12 @@
         <div class="text-wrap">S</div>
         <span>loading...</span>
     </div> -->
-
     <div class="main-wrapper">
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" src="images/popup.png" id="img01">
+            <div id="caption"></div>
+        </div>
 
         <div class="header_top_bg header_trans-fixed menu_light_text">
 
@@ -226,30 +337,33 @@
                         <div class="row flex-wrap">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-wrap  bg_black">
                                 <img src="images/hero.jpg" style="z-index: -999; " class="s-img-switch" alt="" />
-                                <div class="content fadeInUp-animation hero-text"
+
+                                <!-- <div class="content fadeInUp-animation hero-text"
                                     style="display: flex; justify-content: center; text-align: center;">
-                                    <div class="row" style="display: flex; justify-content: center; text-align: center;">
-                                        <div class=" animate__animated animate__fadeInUp animate__delay-1s" >
+                                    <div class="row"
+                                        style="display: flex; justify-content: center; text-align: center;">
+                                        <div class=" animate__animated animate__fadeInUp animate__delay-1s">
                                             <h3 class="title" style="font-family: 'Dancing Script', cursive; 
                                         font-weight: 500;
-                                        font-style: normal; text-align: center;" >
+                                        font-style: normal; text-align: center; float: left;">
                                                 Soumya Shyam</h3>
                                             <div class="descr" id="makeup-artist">
                                                 <span>Makeup Artist.</span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- <div class="content animate__animated animate__fadeIn animate__delay-1s">
+                                </div> -->
+                                <div class="content animate__animated animate__fadeIn animate__delay-1s">
                                     <h3 style="display: flex; justify-content: center; text-align: center; font-family: 'Dancing Script', cursive; font-optical-sizing: auto;
                                     font-weight: 500;
                                     font-style: normal;" class="title ">
-                                        Soumya Shyam</h3>
-                                    <span class="animate__animated animate__fadeInUp animate__delay-1s" style="display: flex; margin-top: 1rem; justify-content: center; color: white;">
+                                        Soumya Shyam</h3> <br> <br>
+                                    <span class="animate__animated animate__fadeInUp animate__delay-1s"
+                                        style="display: flex;  justify-content: center; color: white;">
                                         Makeup Artist.
                                     </span>
-                                    
-                                </div> -->
+
+                                </div>
                             </div>
                             <!-- <div class="col-xs-12 content-wrap col-sm-6 bg_black ">
                                
@@ -259,119 +373,146 @@
                 </div>
             </div>
         </div>
-
-        <section class="intro ">
-            <h2 data-aos="fade-up">HELLO THERE!</h2>
-        </section>
-
-        <section class="services">
-            <div class="service">
-                <img src="images/carousel/01.jpg" data-aos="flip-left" alt="Bridal Service">
-                <div class="service-info" data-aos="flip-right">
-                    <h3>About Us</h3>
-                    <p>Welcome to the realm of beauty and transformation. I am Soumya Shyam, a dedicated makeup artist
-                        with extensive industry experience.</p>
-                    <a href="main/about.html">Know More</a>
-                </div>
-            </div>
-            <div class="service">
-                <div class="service-info" data-aos="flip-right">
-                    <h3>Why choose us?</h3>
-                    <p>A lot of academies and artists have only teaching experience and very little real world
-                        experience of doing actual brides. Learning from them might give you a lot of theoretical
-                        knowledge but it may...</p>
-                    <a href="academy.html">Read More</a>
-                </div>
-                <img src="images/carousel/02.jpg" data-aos="flip-right" alt="Skin Care Service">
-            </div>
-        </section>
-
-        <section class="franchise">
-            <div class="franchise-content">
-                <div class="franchise-info" data-aos="zoom-in">
-                    <h3>C O N T A C T</h3>
-                    <h2>Are you interested in working together? Do you have any questions or just want to say hi?</h2>
-                    <p></p>
-                    <button>Get In Touch</button>
-                </div>
-            </div>
-        </section>
-        <!-- Start Footer -->
-        <footer class="bg-[#1C1C1C] mt-8 md:mt-10 lg:mt-16 xl:mt-20">
-            <div class="w-full px-4 md:px-5 lg:px-8 py-5 md:py-8">
-                <div class="flex flex-col items-center justify-center gap-3">
-                    <a href="index.html">
-                        <h2 class="text-3xl font-bold">Soumya<span class="text-acent italic">Shyam</span></h2>
-                    </a>
-                    <div>
-                        <ul class="flex gap-4 items-center justify-center">
-                            <li>
-                                <a href="#"
-                                    class="outline-icon w-10 h-10 rounded-full flex items-center justify-center bg-primary shadow-3xl">
-                                    <i class="fa-brands fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="outline-icon w-10 h-10 rounded-full flex items-center justify-center bg-primary shadow-3xl">
-                                    <i class="fa-brands fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="outline-icon w-10 h-10 rounded-full flex items-center justify-center bg-primary shadow-3xl">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="outline-icon w-10 h-10 rounded-full flex items-center justify-center bg-primary shadow-3xl">
-                                    <i class="fa-brands fa-linkedin-in"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#"
-                                    class="outline-icon w-10 h-10 rounded-full flex items-center justify-center bg-primary shadow-3xl">
-                                    <i class="fa-brands fa-pinterest-p"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="flex flex-col lg:flex-row gap-5 items-center justify-center pt-4">
-                    <div class="flex flex-col gap-4 items-center  ">
-                        <ul class="flex gap-4 md:gap-5 text-pastelBlue">
-                            <li class="hover:text-acent"><a href="index.html">Home</a></li>
-                            <li class="hover:text-acent"><a href="main/about.html">About</a></li>
-                            <li class="hover:text-acent"><a href="main/portfolio.html">Portfolio</a></li>
-                            <li class="hover:text-acent"><a href="academy.html">Academy</a></li>
-                            <li class="hover:text-acent"><a href="studio.html">Studio</a></li>
-                            <li class="hover:text-acent"><a href="main/contact.html">Contact Us</a></li>
-                        </ul>
-                        <div class="flex items-center justify-center">
-                            <p class="text-pastelBlue justify-center ">Soumya Shyam ©2024 All rights reserved.</p>
+        <div class="container">
+            <div class="row margin-lg-105b margin-md-80b margin-sm-70b margin-xs-40b">
+                <div class="col-sm-12 ">
+                    <div class="headings-wrap load-fade">
+                        <div class="headings text_link ">
+                            <!-- <img src="images/logo_black.png" style="width: 15vh;" class="icon" alt="" /> -->
+                            <h3 class="title" style="color: black;">OUR PHILOSOPHY</h3>
+                            <h5 class="subtitle">
+                                We are fine-art, Bridal wedding, Modelling and Everyday/Natural Makeup artists in
+                                Kerala,
+                                with a special love for providing natural Beauty,<br />
+                                With over 10
+                                years of experience, numerous workshops and features in top wedding
+                                publications,I enhance beauty in the most subtle ways. </h5>
+                            <div class="link-wrap">
+                                <a href="main/contact.html">get in touch</a>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="flex flex-row gap-4">
-                    <a href="#" class="p-2 sm:p-3 border border-slate-300 rounded-lg flex gap-2 items-center text-white">
-                        <img class="w-6 md:w-8 h-auto" src="https://www.androidp1.com/uploads/posts/2021-09/1630781158_google-play-store.webp" alt="">
-                        <div class="text-white">
-                            <span class="text-xxs sm:text-xs">Get It On</span>
-                            <p class="text-pastelBlue">Google Play</p>
+                </div>
+            </div>
+        </div>
+        <section class="color_section">
+            <div class="container">
+                <div class="row">
+                    <div
+                        class="col-sm-12  margin-lg-65t margin-lg-50b margin-sm-45t margin-sm-30b margin-xs-15t margin-xs-10b">
+                        <div class="headings-wrap load-fade padding-lg-35t">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="headings classic_text ">
+                                        <img src="images/decor.png" style="display: block;
+                                        margin-left: auto;
+                                        margin-right: auto;" class="" alt="" />
+                                        <h3 class="title" style="color: black;">EXQUISITE ELEGANCE</h3>
+                                        <h5 class="subtitle">
+                                            Engagements, Weddings, Elopments </h5>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
-                    <a href="#" class="p-2 sm:p-3 border border-slate-300 rounded-lg flex gap-2 items-center">
-                        <img class="w-6 md:w-8 h-auto" src="https://www.apple.com/ac/structured-data/images/knowledge_graph_logo.png?201610091654" alt="">
-                        <div class="text-white">
-                            <span class="text-xxs sm:text-xs">Download On</span>
-                            <p class="text-pastelBlue">Apple Store</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer id="footer" class=" simple">
+            <div class="container">
+                <div class="widg clearfix">
+                    <div id="wiso_subscribe_widget-3" class="sidebar-item col-xs-12 col-sm-6 col-md-4 SubscribeWidget">
+                        <div class="item-wrap">
+                            <div class="wiso-widget-subscribe">
+                                <img src="images/soumya-shyam-dp2.jpg"
+                                    style="max-height: 30vh; width: auto; display: block; margin-left: auto; margin-right: auto;"
+                                    alt="">
+                                <img src="images/logo_black.png"
+                                    style="max-height: 5vh; width: auto; display: block; margin-left: auto; margin-right: auto;"
+                                    alt="">
+
+                            </div>
                         </div>
-                    </a>
-                </div> -->
+                    </div>
+                    <div id="instagram_widget-3" class="sidebar-item col-xs-12 col-sm-6 col-md-4 WisoInstagramWidget">
+                        <div class="item-wrap">
+                            <div class="quze-widget-user quze-widget-border-bottom">
+                                <h3 class="insta-title">instagram feed</h3>
+                                <div class="images-wrap clearfix">
+                                    <a href="https://www.instagram.com/p/C7wkyDJPaje/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                        target="_blank" class="insta-images s-back-switch"><img
+                                            src="images/ig/hiranmaya.jpg" class="s-img-switch img" alt=""></a>
+                                    <a href="https://www.instagram.com/reel/C7olREjP-NO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA== "
+                                        target="_blank" class="insta-images s-back-switch"><img src="images/ig/2.jpg"
+                                            class="s-img-switch img" alt=""></a>
+                                    <a href="https://www.instagram.com/p/C701nIbu4DZ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                        target="_blank" class="insta-images s-back-switch"><img src="images/ig/3.jpg"
+                                            class="s-img-switch img" alt=""></a>
+                                    <a href="https://www.instagram.com/p/C8AABkwIVzq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                        target="_blank" class="insta-images s-back-switch"><img src="images/ig/4.jpg"
+                                            class="s-img-switch img" alt=""></a>
+                                    <!-- <a href="https://www.instagram.com/p/C8V0IVtoErV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank"
+                                    class="insta-images s-back-switch"><img
+                                        src="images/ig/5.jpg"
+                                        class="s-img-switch img" alt=""></a> -->
+                                    <!-- <a href="https://www.instagram.com/p/C9NO7WTS1_s/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank"
+                                    class="insta-images s-back-switch"><img
+                                        src="images/ig/6.jpg"
+                                        class="s-img-switch img" alt=""></a> -->
+                                    <a href="https://www.instagram.com/reel/C9X8pJbSUMT/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                        target="_blank" class="insta-images s-back-switch"><img src="images/ig/7.jpeg"
+                                            class="s-img-switch img" alt=""></a>
+                                    <a href="https://www.instagram.com/p/C55X6E_uuta/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                                        target="_blank" class="insta-images s-back-switch"><img src="images/ig/8.jpg"
+                                            class="s-img-switch img" alt=""></a>
+                                    <!-- <a href="https://www.instagram.com/p/C3iGvx0PJiu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank"
+                                        class="insta-images s-back-switch"><img
+                                            src="images/ig/9.jpg"
+                                            class="s-img-switch img" alt=""></a> -->
+                                </div>
+                                <div class="instagram-text">
+                                    <a
+                                        href="https://www.instagram.com/soumyashyam_makeupartist/">@SoumyaShyam.Makeup</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="wiso_socials_link_widget-3"
+                        class="sidebar-item col-xs-12 col-sm-6 col-md-4 SocialLinkWidget">
+                        <div class="item-wrap">
+                            <div class="wiso-widget-social-link">
+                                <h3 class="wiso-widget-social-title">hello society</h3>
+                                <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                                <a href="https://twitter.com/?lang=en" class="fa fa-twitter"></a>
+                                <a href="https://www.instagram.com/soumyashyam_makeupartist/"
+                                    class="fa fa-instagram"></a>
+                                <a href="https://www.behance.net/" class="fa fa-behance"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-wrap ">
+                <div class="container">
+                    <div class="row flex-wrap">
+                        <div class="copyright col-xs-12 text-left col-sm-6">Soumya Shyam ©2024. With love by <a
+                                href="https://www.revlient.com/">Revlient.</a></div>
+                        <div class="col-xs-12 footer-menu-wrap text-right col-sm-6">
+                            <ul id="menu-footer-menu" class="anchor-navigation">
+                                <li class="menu-item"><a href="index.html">Home</a></li>
+                                <li class="menu-item"><a href="main/about.html">About</a></li>
+                                <li class="menu-item"><a href="main/portfolio.html">Portfolio</a></li>
+                                <li class="menu-item"><a href="academy.html">Academy</a></li>
+                                <li class="menu-item"><a href="studio.html">Studio</a></li>
+                                <li class="menu-item"><a href="main/contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
-        <!-- End Footer -->
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -397,37 +538,39 @@
                 }
             })
         </script>
-
+       
         <script>(function () {
-                    function c() {
-                        var b = a.contentDocument || a.contentWindow.document;
-                        if (b) {
-                            var d = b.createElement('script');
-                            d.innerHTML = "window.__CF$cv$params={r:'894c5e80eaca118e',t:'MTcxODU1NzM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/6aac8896f227/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-                            b.getElementsByTagName('head')[0].appendChild(d)
+                function c() {
+                    var b = a.contentDocument || a.contentWindow.document;
+                    if (b) {
+                        var d = b.createElement('script');
+                        d.innerHTML = "window.__CF$cv$params={r:'894c5e80eaca118e',t:'MTcxODU1NzM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/6aac8896f227/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                        b.getElementsByTagName('head')[0].appendChild(d)
+                    }
+                }
+                if (document.body) {
+                    var a = document.createElement('iframe');
+                    a.height = 1;
+                    a.width = 1;
+                    a.style.position = 'absolute';
+                    a.style.top = 0;
+                    a.style.left = 0;
+                    a.style.border = 'none';
+                    a.style.visibility = 'hidden';
+                    document.body.appendChild(a);
+                    if ('loading' !== document.readyState) c();
+                    else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                    else {
+                        var e = document.onreadystatechange || function () { };
+                        document.onreadystatechange = function (b) {
+                            e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())
                         }
                     }
-                    if (document.body) {
-                        var a = document.createElement('iframe');
-                        a.height = 1;
-                        a.width = 1;
-                        a.style.position = 'absolute';
-                        a.style.top = 0;
-                        a.style.left = 0;
-                        a.style.border = 'none';
-                        a.style.visibility = 'hidden';
-                        document.body.appendChild(a);
-                        if ('loading' !== document.readyState) c();
-                        else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
-                        else {
-                            var e = document.onreadystatechange || function () { };
-                            document.onreadystatechange = function (b) {
-                                e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())
-                            }
-                        }
-                    }
-                })();
+                }
+            })();
         </script>
+
+
 </body>
 
 </html>

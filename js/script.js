@@ -688,7 +688,7 @@
 
     $('.about-hamburger').on('click', function () {
         $('.about-mob-section-wrap').toggleClass('open');
-        $(window).resize();
+        // $(window).resize();
     });
 
     /*=================================*/
