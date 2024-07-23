@@ -87,6 +87,14 @@
 </head>
 
 <body>
+
+    <style>
+        @media only screen and (max-width: 800px) {
+            #makeup-artist {
+                display: none;
+            }
+        }
+    </style>
     <!-- MAIN_WRAPPER -->
     <!-- <div class="preloader-text">
         <div class="text-wrap">S</div>
@@ -220,14 +228,15 @@
                                 <img src="images/hero.jpg" style="z-index: -999; " class="s-img-switch" alt="" />
                                 <div class="content fadeInUp-animation hero-text"
                                     style="display: flex; justify-content: center; text-align: center;">
-                                    <div class="row">
-                                        <div
-                                            class="col-xs-12 col-lg-12 col-md-12 animate__animated animate__fadeInUp animate__delay-1s">
-                                            <h3 class="title " style="font-family: 'Dancing Script', cursive; font-optical-sizing: auto;
-                                            font-weight: 500;
-                                            font-style: normal;">
+                                    <div class="row" style="display: flex; justify-content: center; text-align: center;">
+                                        <div class=" animate__animated animate__fadeInUp animate__delay-1s" >
+                                            <h3 class="title" style="font-family: 'Dancing Script', cursive; 
+                                        font-weight: 500;
+                                        font-style: normal; text-align: center;" >
                                                 Soumya Shyam</h3>
-                                            <div style="color: white; margin-top: 0;">Makeup Artist.</div>
+                                            <div class="descr" id="makeup-artist">
+                                                <span>Makeup Artist.</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
