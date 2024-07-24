@@ -91,115 +91,39 @@
 <body>
 
     <style>
-        
-         #myImg {
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        #myImg:hover {
-            opacity: 0.7;
-        }
-
-        /* The Modal (background) */
-        .modal {
-            display:block;
-            /* Hidden by default */
-            position: fixed;
-            /* Stay in place */
-            z-index: 99999;
-            /* Sit on top */
-            padding-top: 100px;
-            /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%;
-            /* Full width */
-            height: 100%;
-            /* Full height */
-            overflow: auto;
-            /* Enable scroll if needed */
-        }
-
-        /* Modal Content (image) */
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-
-        /* Caption of Modal Image */
-        #caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 150px;
-        }
-
-        /* Add Animation */
-        .modal-content,
-        #caption {
-            -webkit-animation-name: zoom;
-            -webkit-animation-duration: 0.6s;
-            animation-name: zoom;
-            animation-duration: 0.6s;
-        }
-
-        @-webkit-keyframes zoom {
-            from {
-                -webkit-transform: scale(0)
-            }
-
-            to {
-                -webkit-transform: scale(1)
-            }
-        }
-
-        @keyframes zoom {
-            from {
-                transform: scale(0)
-            }
-
-            to {
-                transform: scale(1)
-            }
-        }
-
-        /* The Close Button */
-        .close {
+        .popup {
+            background-color: #4d67db;
+            margin-top: 3rem;
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            border-radius: 8px;
+            font-family: "Poppins", sans-serif;
+            display: none;
+            text-align: center;
+            z-index: 999999;
+            overflow: auto;
         }
 
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
+        .popup button {
+            display: block;
+            margin: 0 0 20px auto;
+            font-size: 30px;
+            color: #131111;
+            border: none;
+            outline: none;
             cursor: pointer;
+            position: absolute;
+            top: 8px;
+            right: 16px;
         }
 
-        /* 100% Image Width on Smaller Screens */
-        @media only screen and (max-width: 700px) {
-            .modal-content {
-                width: 100%;
-            }
-        }
-
-        @media only screen and (max-width: 800px) {
-            #makeup-artist {
-                display: none;
-            }
+        .img {
+            position: sticky;
+            padding: 0;
+            margin: 0;
+            width: 80dvh;
         }
     </style>
     <!-- MAIN_WRAPPER -->
@@ -207,13 +131,8 @@
         <div class="text-wrap">S</div>
         <span>loading...</span>
     </div> -->
-    <div class="main-wrapper">
-        <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" src="images/popup.png" id="img01">
-            <div id="caption"></div>
-        </div>
 
+    <div class="main-wrapper">
         <div class="header_top_bg header_trans-fixed menu_light_text">
 
             <div class="container-fluid ">
@@ -337,38 +256,29 @@
                         <div class="row flex-wrap">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 content-wrap  bg_black">
                                 <img src="images/hero.jpg" style="z-index: -999; " class="s-img-switch" alt="" />
-
-                                <!-- <div class="content fadeInUp-animation hero-text"
-                                    style="display: flex; justify-content: center; text-align: center;">
-                                    <div class="row"
-                                        style="display: flex; justify-content: center; text-align: center;">
-                                        <div class=" animate__animated animate__fadeInUp animate__delay-1s">
-                                            <h3 class="title" style="font-family: 'Dancing Script', cursive; 
-                                        font-weight: 500;
-                                        font-style: normal; text-align: center; float: left;">
-                                                Soumya Shyam</h3>
-                                            <div class="descr" id="makeup-artist">
-                                                <span>Makeup Artist.</span>
-                                            </div>
-                                        </div>
+                                <div id="desktop-view"
+                                    class="content  animate__animated animate__fadeIn animate__delay-1s ">
+                                    <div class="popup">
+                                        <!-- <h2>Hey there!!</h2> -->
+                                        <img class="img" src="images/popup.png" alt="">
+                                        <button id="close">&times;</button>
                                     </div>
-                                </div> -->
-                                <div class="content animate__animated animate__fadeIn animate__delay-1s">
                                     <h3 style="display: flex; justify-content: center; text-align: center; font-family: 'Dancing Script', cursive; font-optical-sizing: auto;
                                     font-weight: 500;
                                     font-style: normal;" class="title ">
-                                        Soumya Shyam</h3> <br> <br>
-                                    <span class="animate__animated animate__fadeInUp animate__delay-1s"
-                                        style="display: flex;  justify-content: center; color: white;">
+                                        Soumya Shyam</h3> <br> <br> <br>
+                                    <span class="  animate__animated animate__fadeInUp animate__delay-1s"
+                                        style="display: flex;   justify-content: center; color: white;">
                                         Makeup Artist.
                                     </span>
-
                                 </div>
+
                             </div>
                             <!-- <div class="col-xs-12 content-wrap col-sm-6 bg_black ">
                                
                             </div> -->
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -529,6 +439,27 @@
         <script>
             AOS.init();
         </script>
+
+        <script>
+            window.addEventListener("load", function () {
+                setTimeout(
+                    function open(event) {
+                        document.querySelector(".popup").style.display = "block";
+                    },
+                    1000
+                )
+            });
+
+
+            document.querySelector("#close").addEventListener("click", function () {
+                document.querySelector(".popup").style.display = "none";
+            });
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function () {
+                document.querySelector(".popup").style.display = "none";
+            }
+            
+        </script>
         <script>
             document.addEventListener('scroll', () => {
                 if (window.scrollY > 0) {
@@ -538,36 +469,36 @@
                 }
             })
         </script>
-       
+
         <script>(function () {
-                function c() {
-                    var b = a.contentDocument || a.contentWindow.document;
-                    if (b) {
-                        var d = b.createElement('script');
-                        d.innerHTML = "window.__CF$cv$params={r:'894c5e80eaca118e',t:'MTcxODU1NzM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/6aac8896f227/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-                        b.getElementsByTagName('head')[0].appendChild(d)
-                    }
-                }
-                if (document.body) {
-                    var a = document.createElement('iframe');
-                    a.height = 1;
-                    a.width = 1;
-                    a.style.position = 'absolute';
-                    a.style.top = 0;
-                    a.style.left = 0;
-                    a.style.border = 'none';
-                    a.style.visibility = 'hidden';
-                    document.body.appendChild(a);
-                    if ('loading' !== document.readyState) c();
-                    else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
-                    else {
-                        var e = document.onreadystatechange || function () { };
-                        document.onreadystatechange = function (b) {
-                            e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                    function c() {
+                        var b = a.contentDocument || a.contentWindow.document;
+                        if (b) {
+                            var d = b.createElement('script');
+                            d.innerHTML = "window.__CF$cv$params={r:'894c5e80eaca118e',t:'MTcxODU1NzM2My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='cdn-cgi/challenge-platform/h/g/scripts/jsd/6aac8896f227/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+                            b.getElementsByTagName('head')[0].appendChild(d)
                         }
                     }
-                }
-            })();
+                    if (document.body) {
+                        var a = document.createElement('iframe');
+                        a.height = 1;
+                        a.width = 1;
+                        a.style.position = 'absolute';
+                        a.style.top = 0;
+                        a.style.left = 0;
+                        a.style.border = 'none';
+                        a.style.visibility = 'hidden';
+                        document.body.appendChild(a);
+                        if ('loading' !== document.readyState) c();
+                        else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c);
+                        else {
+                            var e = document.onreadystatechange || function () { };
+                            document.onreadystatechange = function (b) {
+                                e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())
+                            }
+                        }
+                    }
+                })();
         </script>
 
 
