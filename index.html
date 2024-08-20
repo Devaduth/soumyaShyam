@@ -94,9 +94,10 @@
         }
 
         .section {
-            background: var(--extra-light);
+            /* background: var(--extra-light); */
+            background: url(images/home_bg.jpg);
             background-size: cover;
-            background-repeat: no-repeat;
+            background-repeat: repeat-x;
         }
 
         .section__container {
@@ -221,7 +222,7 @@
                 <div class="hamburger"
                     style="display: flex; justify-content: center; align-items: center; margin-top: 2rem;">
                     <a href="index.html" style="font-size: small; text-decoration: none;"
-                        class="logo animate__fadeIn animate__animated animate__delay-2s"><span id="span-logo"
+                        class="logo animate__fadeIn animate__animated animate__delay-1s"><span id="span-logo"
                             style="font-size: medium;  text-decoration: none; color: rgb(43, 41, 41);">Soumya
                             Shyam</span></a>
                 </div>
@@ -247,7 +248,7 @@
                                         <span class="line"></span>
                                     </div>
                                 </a>
-                                <ul id="menu-menu-1" class="menu animate__fadeIn animate__animated animate__delay-1s">
+                                <ul id="menu-menu-1" class="menu animate__fadeIn animate__animated animate__delay-2s">
                                     <li class="menu-item    current-menu-ancestor mega-menu">
                                         <a href="#" style="color: #471515;">Home</a>
                                     </li>
@@ -333,14 +334,13 @@
                 </div>
             </div>
         </div>
-        <div class="popup">
-            <!-- <h2>Hey there!!</h2> -->
+        <!-- <div class="popup">
             <img class="img" src="images/popup1.png" alt="">
             <button id="close">&times;</button>
-        </div>
-        <div class="section">
+        </div> -->
+        <div class="section ">
             <div class="section__container">
-                <div class="content">
+                <div class="content animate__animated animate__fadeIn animate__delay-2s">
                     <!-- <h1 class="title" style="color: #702626;">
                         Soumya Shyam
                     </h1>
@@ -350,13 +350,13 @@
                         Transform yourself with the expertise of top makeup professionals at the Soumya Shyam Makeup
                         Studio and embrace your beauty like never before.
                     </p> -->
-                    <div class="action__btns">
-                        <button class="hire__me" onclick="location.href='https://wa.me/91562199499'">Hire Me</button>
+                    <div class="action__btns animate__animated animate__fadeInUp animate__delay-3s">
+                        <button class="hire__me" onclick="location.href='https://wa.me/919562199499'">Hire Me</button>
                         <button class="portfolio" onclick="location.href='main/portfolio.html'">Portfolio</button>
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/1.jpg" alt="profile" />
+                    <img src="images/1.jpg" class="animate__animated animate__zoomIn" alt="profile" />
                 </div>
             </div>
         </div>
