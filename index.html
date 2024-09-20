@@ -163,6 +163,8 @@
             cursor: pointer;
         }
 
+       
+
         .hire__me {
             /*background-color: var(--primary-color-dark);*/
             background-color: #353232;
@@ -188,24 +190,25 @@
 
         .image {
             display: grid;
-            place-items: center;
+            place-items: end;
         }
 
         .image img {
             width: min(30rem, 90%);
-            border-radius: 100%;
+            position: absolute;
+            bottom: 0;
+            /* border-radius: 100%; */
         }
 
         @media (width < 750px) {
 
-            #span-logo{
+            #span-logo {
                 display: none;
             }
 
 
-            .side_image{
+            .side_image {
                 width: 500px;
-               
             }
 
             .section__container {
@@ -217,7 +220,8 @@
             .image {
                 grid-area: 0/1/1/1;
             }
-            .image img{
+
+            .image img {
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
                 position: absolute;
@@ -228,6 +232,16 @@
                 /* margin: auto; */
             }
         }
+        @media screen and (max-width: 400px) and (max-height: 900px) {
+            .side_image{
+               position: absolute;
+               top: 2rem;
+               display: flex;
+               justify-content: center;
+               align-self: center;
+            }
+        }
+   
     </style>
     <!-- MAIN_WRAPPER -->
     <!-- <div class="preloader-text">
@@ -242,9 +256,11 @@
                     style="display: flex; justify-content: center; align-items: center; margin-top: 2rem;">
                     <a href="index.html" style="font-size: small; text-decoration: none;"
                         class="logo animate__fadeIn animate__animated animate__delay-1s">
-                        <span id="span-logo" style="font-size: medium;  text-decoration: none; color: rgb(43, 41, 41);">Soumya Shyam</span>
+                        <span id="span-logo"
+                            style="font-size: medium;  text-decoration: none; color: rgb(43, 41, 41);">Soumya
+                            Shyam</span>
                     </a>
-                    
+
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
@@ -297,7 +313,7 @@
                             </nav>
                             <!-- NAVIGATION -->
 
-                            
+
                             <!-- ABOUT SECTION-->
                             <div class="about-mob-section-wrap">
                                 <div class="about-hamburger">
@@ -358,7 +374,7 @@
             <img class="img" src="images/popup1.png" alt="">
             <button id="close">&times;</button>
         </div> -->
-        
+
         <div class="section ">
             <div class="section__container">
 
