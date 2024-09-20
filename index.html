@@ -198,6 +198,15 @@
 
         @media (width < 750px) {
 
+            #span-logo{
+                display: none;
+            }
+
+
+            .side_image{
+                width: 500px;
+               
+            }
 
             .section__container {
                 padding: 10rem 1rem 5rem 1rem;
@@ -206,11 +215,17 @@
             }
 
             .image {
-                grid-area: 1/1/2/2;
+                grid-area: 0/1/1/1;
+            }
+            .image img{
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                position: absolute;
             }
 
             .action__btns {
-                margin: auto;
+                display: none;
+                /* margin: auto; */
             }
         }
     </style>
@@ -226,9 +241,10 @@
                 <div class="hamburger"
                     style="display: flex; justify-content: center; align-items: center; margin-top: 2rem;">
                     <a href="index.html" style="font-size: small; text-decoration: none;"
-                        class="logo animate__fadeIn animate__animated animate__delay-1s"><span id="span-logo"
-                            style="font-size: medium;  text-decoration: none; color: rgb(43, 41, 41);">Soumya
-                            Shyam</span></a>
+                        class="logo animate__fadeIn animate__animated animate__delay-1s">
+                        <span id="span-logo" style="font-size: medium;  text-decoration: none; color: rgb(43, 41, 41);">Soumya Shyam</span>
+                    </a>
+                    
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
@@ -281,7 +297,7 @@
                             </nav>
                             <!-- NAVIGATION -->
 
-
+                            
                             <!-- ABOUT SECTION-->
                             <div class="about-mob-section-wrap">
                                 <div class="about-hamburger">
@@ -342,14 +358,16 @@
             <img class="img" src="images/popup1.png" alt="">
             <button id="close">&times;</button>
         </div> -->
+        
         <div class="section ">
             <div class="section__container">
+
                 <div class="content animate__animated animate__fadeIn animate__delay-2s">
                     <!-- <h1 class="title" style="color: #702626;">
                         Soumya Shyam
                     </h1>
                     <span style="color: #6e3737;">Makeup Artist.</span> -->
-                    <img src="images/side_img.png" alt="">
+                    <img src="images/side_img.png" class="side_image" alt="">
                     <!-- <p class="description">
                         Transform yourself with the expertise of top makeup professionals at the Soumya Shyam Makeup
                         Studio and embrace your beauty like never before.
@@ -360,7 +378,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="images/1.jpg" class="animate__animated animate__zoomIn" alt="profile" />
+                    <img src="images/profile2.png" class="animate__animated animate__zoomIn" alt="profile" />
                 </div>
             </div>
         </div>
