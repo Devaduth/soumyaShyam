@@ -202,15 +202,22 @@
         }
 
         @media (width < 750px) {
+            .container-fluid{
+                background-color: rgba(255, 255, 255, 0.356);
+                padding-bottom: 1rem;
+            }
             .image {
                 display: none;
             }
 
             .section {
                 /* background: var(--extra-light); */
-                background: url(images/home_bg_2.jpg);
+                /* background: url(images/home_bg_2.jpg); */
+                background: url(images/13.jpg);
                 background-size: cover;
                 background-repeat: no-repeat;
+                transition: opacity 1s ease-in-out;
+                opacity: 0;
             }
 
             /* #span-logo {
@@ -394,7 +401,7 @@
             <button id="close">&times;</button>
         </div> -->
 
-        <div class="section ">
+        <div id="backgroundDiv" class="section ">
             <div class="section__container">
                 <div class="content animate__animated animate__fadeIn animate__delay-2s">
                     <!-- <h1 class="title" style="color: #702626;">
@@ -434,6 +441,44 @@
         AOS.init();
     </script>
 
+    <script>
+        // Array of image paths
+        const images = [
+            'images/home_bg_2.jpg',
+            'images/home_bg_3.jpg'
+        ];
+
+        // Access the div element using DOM
+        const backgroundDiv = document.getElementById('backgroundDiv');
+        const sideImage = document.getElementsByClassName("side_image")
+        let currentImageIndex = 0;
+
+        // Function to change background image with a fade-in effect
+        function changeBackgroundImage() {
+            // For loop to change the image with a delay using setTimeout
+            for (let i = 0; i < images.length; i++) {
+                setTimeout(() => {
+                    // Fade out (set opacity to 0) before changing image
+                    backgroundDiv.style.opacity = 0;
+
+                    // Change the image after a short delay (300ms)
+                    setTimeout(() => {
+                        backgroundDiv.style.backgroundImage = `url('${images[i]}')`;
+                        // Fade in (set opacity to 1) after changing the image
+                        backgroundDiv.style.opacity = 1;
+                    }, 300); // Wait for 300ms before changing the image for a smooth transition
+
+                },i * 3000); // Image changes every 3 seconds
+            }
+
+            // Restart the loop after all images are displayed
+            setTimeout(changeBackgroundImage, images.length * 3000);
+        }
+
+        // Start the background image changes
+        changeBackgroundImage();
+
+    </script>
     <script>
         window.addEventListener("load", function () {
             setTimeout(
