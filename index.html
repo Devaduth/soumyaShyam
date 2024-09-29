@@ -164,7 +164,7 @@
             cursor: pointer;
         }
 
-       
+
 
         .hire__me {
             /*background-color: var(--primary-color-dark);*/
@@ -195,24 +195,36 @@
         }
 
         .image img {
-            height: min(46rem, 100%);            
+            height: min(46rem, 100%);
             position: absolute;
             bottom: 0;
             /* border-radius: 100%; */
         }
 
         @media (width < 750px) {
-
-            #span-logo {
+            .image {
                 display: none;
             }
 
+            .section {
+                /* background: var(--extra-light); */
+                background: url(images/home_bg_2.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            /* #span-logo {
+                display: none;
+            } */
+
 
             .side_image {
+                display: none;
+                /*                 
                 width: 400px;
                 position: absolute;
                 bottom: 70%;
-                right: 10px;
+                right: 10px; */
             }
 
             .section__container {
@@ -239,16 +251,16 @@
                 /* margin: auto; */
             }
         }
-        @media screen and (max-width: 400px) and (max-height: 900px) {
-            .side_image{
-               position: fixed;
-               top: 2rem;
-               display: flex;
-               justify-content: center;
-               align-self: center;
+
+        /* @media screen and (max-width: 400px) and (max-height: 900px) {
+            .side_image {
+                position: fixed;
+                top: 2rem;
+                display: flex;
+                justify-content: center;
+                align-self: center;
             }
-        }
-   
+        } */
     </style>
     <!-- MAIN_WRAPPER -->
     <!-- <div class="preloader-text">
@@ -384,7 +396,6 @@
 
         <div class="section ">
             <div class="section__container">
-
                 <div class="content animate__animated animate__fadeIn animate__delay-2s">
                     <!-- <h1 class="title" style="color: #702626;">
                         Soumya Shyam
